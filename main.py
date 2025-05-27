@@ -5,7 +5,7 @@ import requests
 import threading
 from urllib.parse import urlparse
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Global variable to track running tasks
 active_tasks = {}
@@ -515,5 +515,5 @@ def task_status(task_id):
         return active_tasks[task_id]
     return {'status': 'error', 'message': 'Task not found'}, 404
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     app.run(host='0.0.0.0', port=5000)
